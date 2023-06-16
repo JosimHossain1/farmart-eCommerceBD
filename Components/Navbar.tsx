@@ -1,26 +1,39 @@
 import Image from "next/image";
-import logo from "../../assets/logo1.png";
+import logo from "../assets/logo1.png";
 import {
   MagnifyingGlassIcon,
   UserCircleIcon,
   HeartIcon,
   ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
     <div className="border-b border-b-gray py-3">
-      <nav className="px-24 flex justify-between items-center ">
+      <nav className="px-6 lg:px-24 flex justify-between items-center ">
         {/* Logo */}
-        <Image src={logo} alt="Logo" width={120} height={120} />
+        <Link href="/">
+          <Image
+            src={logo}
+            alt="Logo"
+            width={120}
+            height={120}
+            className="cursor-pointer"
+          />
+        </Link>
         {/* Search */}
-        <div className="flex border border-gray p-2 bg-gray-200 rounded space-x-2 self-center">
-          <select name="" id="" className="outline-none border-r-2 border-gray">
+        <div className="md:flex border hidden border-gray p-2 bg-gray-100 rounded space-x-2 self-center">
+          <select
+            name=""
+            id=""
+            className="outline-none border-r-2 border-gray bg-transparent text-sm  font-semibold"
+          >
             <option value="">ALL CATEGORIES</option>
           </select>
           <form action="">
             <input
-              className="outline-none"
+              className="outline-none bg-transparent"
               type="text"
               placeholder="I'am serching for..."
             />
@@ -30,7 +43,7 @@ const Navbar = () => {
 
         <div className="flex space-x-10">
           {/* Support */}
-          <div className="flex flex-col">
+          <div className="md:flex flex-col hidden">
             <h1 className="font-semibold text-[15px]">(+880) 1303651288</h1>
             <p className="self-end text-[12px] text-gray">support</p>
           </div>
