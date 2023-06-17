@@ -1,4 +1,4 @@
-import Checkout from "../app/cart/page";
+import Checkout from "./cart/page";
 
 export default function Home() {
   return (
